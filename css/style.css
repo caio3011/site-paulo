@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
+
+:root[data-theme='light'] {
+    --primary-color: #0000ff;
+    --primary-bg-color: #e0d9d9;
+    --secondary-bg-color: #19d800;
+    --primary-border-color:  #ff236c;
+    --secondary-border-color: #79ce0a;
+    --title-color: #c2f313;
+    --text-color: #28292E;
+    --link-color: #28292E;
+    --icon-color: #56575A;
+}
+
+:root,
+:root[data-theme='dark'] {
+    /* Definir cores padrão em variáveis */
+    --primary-color: #f0f0f0;  /* cor textos */
+    --primary-bg-color: #131313;  /* BG = Background */
+    --secondary-bg-color: #28292E;
+    --primary-border-color: #28292E;
+    --secondary-border-color: #56575A;
+
+    /* Definir cores padrão para os textos em variáveis */
+    --title-color: #F0F0F0;
+    --text-color: #9a9a9c;
+    --link-color: #9a9a9c;
+    --icon-color: #C7C8C9;
+}
+
+
+html[data-theme='light'] .brand-logo {
+    filter: invert(1);
+}
+html[data-theme='light'] .tecnologias-logo {
+    filter: invert(80%);
+}
+
+* {
+    margin: 0;      /*margem*/  
+    padding: 0;     /* espaçamento */
+    box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-bg-color) transparent;
+}
+body {
+    background: var(--primary-bg-color);
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color); /* cor do Texto*/
+}
+
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-bg-color);
+    border-radius: 50rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover {
+    color: var(--primary-color);
+}
+i {
+    color: var(--icon-color);
+}
+b {
+    font-weight: 400;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 200;  
+}
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.4rem;
+}
+h3 {
+    font-size: 1.55rem;
+    text-align: left;
+}
+h4 {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.15rem;
+    text-align: left;
+}
+h1, h2, h3 {
+    font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: var(--title-color);
+    font-weight: 200;
+}
+p, span, li {
+    font-size: 1rem;
+}
+p {
+    text-align: justify;
+}
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;  /* comprimento*/
+    padding: 0.5rem 1rem;
+    z-index: 2; /* sobreposição */
+}
+.header-toggle{
+    display: flex;
+    justify-content: flex-end;
+}
+.header-brand .brand-logo{
+    width: 3.25rem; /* 3.25rem = 52px */
+    height: 3.25rem;  /* altura */
+}
+
+.menu-social{
+    gap: 1rem;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    border-radius: 3.125rem;
+    border: none;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+    color: var(--primary-color);
+    /* box-shadow serve pra dar sombra ao botão com 3 valores mais a cor */
+}
+.btn:hover{
+    transform: scale(1.05);
+    transition: ease-in-out .3s;
+}
+.btn span, .btn i {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.menu{    /* UL */
+    display: flex;
+    align-items: center;    /* alinha os itens  */
+    background-color: var(--primary-bg-color);
+}
+.menu-principal{
+    gap: 1rem;
+}
+
+.menu{    /* UL */
+    display: flex;
+    align-items: center;    /* alinha os itens  */
+    background-color: var(--primary-bg-color);
+}
+.menu-principal{
+    gap: 1rem;
+}
+.menu-item{
+    width: 100%;
+}
+.menu-link{    /* Estrutura do Li */
+    display: flex;  /* flex é usado quando é mobile e desktop */
+    align-items: center;
+    gap: .5rem;
+}
+
+.menu-link.active .menu-icon,
+.menu-link.active .menu-text,
+.menu-link:hover .menu-icon, 
+.menu-link:hover .menu-text {
+    color: var(--primary-color); /* para deixar cor quando uma das abas estiver aberta */
+} 
+
+
+
+
+#toggleTheme{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
